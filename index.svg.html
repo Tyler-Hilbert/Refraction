@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>svg.js example</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.3.4/svg.min.js"></script>
+	
+</head>
+<body>
+	<div id="paper"></div>
+<script>
+	var draw = svg('paper').size(300, 300)
+	var rect = draw.rect(100, 100).attr({ fill: '#f06' })
+	rect.animate().move(150, 150)
+    
+    
+</script>
+</body>
+</html>

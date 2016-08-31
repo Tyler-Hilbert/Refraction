@@ -1,19 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>svg.js example</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.3.4/svg.min.js"></script>
-	
-</head>
-<body>
-	<div id="paper"></div>
-<script>
-	var draw = svg('paper').size(300, 300)
-	var rect = draw.rect(100, 100).attr({ fill: '#f06' })
-	rect.animate().move(150, 150)
-    
-    
-</script>
-</body>
-</html>
+<div id="parent">
+  <div class="child">Medium 1</div>
+  <div class="child" id="glass">Medium 2</div>
+  <div class="child">Medium 1</div>
+</div>
+
+<style>
+  #parent {
+    background: #999;
+    padding: 0px;
+  }
+
+  #glass {
+    background: #666;
+  }
+
+  .child {
+    background: #ccc;
+    height: 200px;
+    margin: 0px;
+  }
+</style>
