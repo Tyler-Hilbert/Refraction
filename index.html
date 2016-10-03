@@ -1,4 +1,8 @@
 <html>
+  <head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
   <body>
 	<h1>Refraction of light:</h1>
 	When medium 1 has a lower index of refraction than medium 2:
@@ -22,28 +26,8 @@
         </svg>
       </div>
     </div>
-    <style>
-      #parent {
-		background: #999;
-		padding: 0px;
-      }
-	  
-      #glass {
-		background: #666;
-      }
-	  
-      .child {
-		background: #ccc;
-		height: 200px;
-		margin: 0px;
-		position: relative;
-      }
-	  
-      svg {
-		position: absolute;
-		left: 0;
-      }
-    </style>
+
+    <button onclick="swap()">Swap index of refractions</button>
   </body>
 </html>
 
