@@ -8,19 +8,67 @@ var assert = require('assert');
 describe('Array', function() {
   describe('#indexOf()', function() {
     it('should return -1 when the value is not present', function() {
+      var calc = new Calculator(ni, nr, aoi);
 
-      for (var aoi = 10; aoi <= 90; aoi+=10) {
-        for (var nr = .5; nr <= 4; nr+= .5) {
-          for (var ni = .5; ni <= 4; ni+= .5) {
-            var calc = new Calculator(ni, nr, aoi);
-            console.log("ni: " + ni + " nr: " + nr + " aoi (in degrees): " + aoi);
-            console.log("Angle of refraction: " + calc.getAOR());
-            console.log("Critical angle: " + calc.getCriticalAngle());
-          }
-        }
+      // Cases to test:
+      // low ni, high nr
+      calc.ni = .5;
+      calc.nr = 2;
+      calc.aoi = 30;
+
+      calc.ni = 1;
+      calc.nr = 2.1;
+      calc.aoi = 32;
+
+      // high ni, low nr
+      calc.ni = 4;
+      calc.nr = 1;
+      calc.aoi = 20;
+
+      calc.ni = 3.8;
+      calc.nr = 2;
+      calc.aoi = 22;
+
+      // ni == nr
+      calc.ni = 4;
+      calc.nr = 4;
+      calc.aoi = 60;
+
+      calc.ni = 1;
+      calc.nr = 1
+      calc.aoi = 31;
+
+      // large incidencec angle
+      calc.ni = 1;
+      calc.nr = 1.5;
+      calc.aoi = 89;
+
+      calc.ni = 1.5;
+      calc.nr = 1;
+      calc.aoi = 85;
+
+      // small incidence angle
+      calc.ni = 1.5;
+      calc.nr = 1;
+      calc.aoi = 1;
+
+      calc.ni = 1;
+      calc.nr = 1.5
+      calc.aoi = 1.5;
+
+      // when there is no critical angle (try to get critical angle)
+      calc.ni = 1;
+      calc.nr = 1.5;
+
+      function test(calc, expectedAOR, expectedCriticalAngle) {
+        console.log("ni: " + calc.ni + ", nr: " + calc.nr + ", aoi(in degrees): " + calc.aoi + ", expected aor (in degrees): " + expectedAOR + ", expected critical angle(in degrees): " + expectedCriticalAngle);
+        var aor = calc.getAOR();
+        var criticalAngle = calc.getCriticalAngle();
+        console.log("AOR(in degrees): " + aor);
+        console.log("Critical angle(in degrees): " + criticalAngle);
+        
+        assert(aor == expectedAOR && criticalAngle == expectedCriticalAngle);
       }
-
-      //assert.equal(-1, [1,2,3].indexOf(4));
     });
   });
 });

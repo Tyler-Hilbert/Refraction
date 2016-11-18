@@ -5,14 +5,14 @@ function Calculator(ni, nr, aoi) {
 	this.aoi = aoi;
 
 	this.getAOR = function() {
-		aoiRadians = this.degreesToRadians(aoi);
-		aorRadians = Math.asin(ni * Math.sin(aoiRadians) / nr);
+		aoiRadians = this.degreesToRadians(this.aoi);
+		aorRadians = Math.asin(this.ni * Math.sin(aoiRadians) / this.nr);
 		aorDegrees = this.radiansToDegrees(aorRadians);
 		return aorDegrees;
 	};
 
 	this.getCriticalAngle = function() {
-		criticalAngleRadians = Math.asin(nr / ni);
+		criticalAngleRadians = Math.asin(this.nr / this.ni);
 		criticalAngleDegrees = this.radiansToDegrees(criticalAngleRadians);
 		return criticalAngleDegrees;
 	};
