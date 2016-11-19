@@ -5,5 +5,5 @@ This is a port of the following java app onto HTML5: https://github.com/Tyler-Hi
 
 
 ### To test build:
-1) Install npm
+1) Install npm  
 2) Run `$npm test` in /Refraction
