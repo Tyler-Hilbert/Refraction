@@ -21,6 +21,7 @@ function test(calc, aor, criticalAngle) {
   }
 }
 
+var refractiveIndex = {"vacuum": 1, "air":	1.000293, "water": 1.33, "diamond": 2.419}
 
 var assert = require('assert');
 describe('Calculator', function() {
@@ -63,6 +64,17 @@ describe('Calculator', function() {
 
       calc = new Calculator(1, 1.5, 1.5);
       test(calc, 0.9999365315129298, "nan");
+    });
+
+    it('refractive index test', function() {
+      var calc = new Calculator(refractiveIndex.vacuum, refractiveIndex.air, 30);
+      test(calc, 29.990310949989453, "nan");
+
+      calc = new Calculator(refractiveIndex.air, refractiveIndex.diamond, 15);
+      test(calc, 6.143881507130866 , "nan");
+
+      calc = new Calculator(refractiveIndex.diamond, refractiveIndex.water, 45);
+      test(calc, "nan", 33.35425165725555);
     });
   });
 });
