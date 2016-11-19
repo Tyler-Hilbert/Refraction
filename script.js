@@ -16,9 +16,4 @@ function swap() {
 		document.getElementById("description").innerHTML = "When medium 1 has a higher index of refraction than medium 2";
 		greaterIndex = 1;
 	}
-
-	// Calculator test
-	var calc = new Calculator(1.5, 1, 30);
-	console.log(calc.getAOR());
-	console.log(calc.getCriticalAngle());
 }
