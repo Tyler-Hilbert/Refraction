@@ -4,11 +4,6 @@ var path = './calculator.js';
 var code = fs.readFileSync(path);
 vm.runInThisContext(code);
 
-/*
-function test(calc, expectedAOR, expectedCriticalAngle) {
-  print(calc);
-  assert(aor == expectedAOR && criticalAngle == expectedCriticalAngle);
-}*/
 
 var assert = require('assert');
 describe('Array', function() {
