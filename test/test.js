@@ -32,13 +32,13 @@ describe('Array', function() {
       calc.ni = 3.8;
       calc.nr = 2;
       calc.aoi = 22;
-      test(calc, 45.37768526107654, 31.756863859297123); // TODO Can a critical angle be at 90 degres when going from ni == nr
+      test(calc, 45.37768526107654, 31.756863859297123);
 
       // ni == nr
       calc.ni = 4;
       calc.nr = 4;
       calc.aoi = 60;
-      test(calc, 59.99999999999999, 90);
+      test(calc, 59.99999999999999, 90); // TODO Can a critical angle be at 90 degres when going from ni == nr
 
       calc.ni = 1;
       calc.nr = 1
