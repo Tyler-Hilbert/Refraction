@@ -27,7 +27,7 @@ describe('Array', function() {
       calc.ni = 4;
       calc.nr = 1;
       calc.aoi = 20;
-      test(calc, "nan", 14.477512185929925, 14.477512185929925); // TODO Should this be "nan"?
+      test(calc, "nan", 14.477512185929925); // TODO Should this be "nan"?
 
       calc.ni = 3.8;
       calc.nr = 2;
