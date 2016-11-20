@@ -21,7 +21,7 @@ function test(calc, aor, criticalAngle) {
   }
 }
 
-var refractiveIndex = {"vacuum": 1, "air":	1.000293, "water": 1.33, "diamond": 2.419}
+var refractiveIndex = {"vacuum": 1, "air": 1.000293, "water": 1.33, "diamond": 2.419}
 
 var assert = require('assert');
 describe('Calculator', function() {
@@ -66,6 +66,7 @@ describe('Calculator', function() {
       test(calc, 0.9999365315129298, "nan");
     });
 
+    // TODO - can I print the enum name instead of the number for these?
     it('refractive index test', function() {
       var calc = new Calculator(refractiveIndex.vacuum, refractiveIndex.air, 30);
       test(calc, 29.990310949989453, "nan");
