@@ -6,7 +6,7 @@ vm.runInThisContext(code);
 
 // Test if the calculator has the values or aor for getAOR() and criticalAngle for getCriticalAngle()
 function test(calc, aor, criticalAngle) {
-  calc.print(calc);
+  calc.printToConsole(calc);
   if (aor != "nan") {
     assert(calc.getAOR() == aor);
   }
@@ -16,7 +16,6 @@ function test(calc, aor, criticalAngle) {
   }
 }
 
-var refractiveIndex = {"vacuum": 1, "air": 1.000293, "water": 1.33, "diamond": 2.419}
 
 var assert = require('assert');
 describe('Calculator', function() {
@@ -63,16 +62,17 @@ describe('Calculator', function() {
 
     // TODO - can I print the enum name instead of the number for these?
     it('refractive index test', function() {
-      var calc = new Calculator(refractiveIndex.vacuum, refractiveIndex.air, 30);
+      var calc = new Calculator(1, 1, 30); // Instantiate calc with unused variables so you can reference calc.refractiveIndex
+      calc = new Calculator(calc.refractiveIndex.vacuum, calc.refractiveIndex.air, 30);
       test(calc, 29.990310949989453, "nan");
 
-      calc = new Calculator(refractiveIndex.air, refractiveIndex.diamond, 15);
+      calc = new Calculator(calc.refractiveIndex.air, calc.refractiveIndex.diamond, 15);
       test(calc, 6.143881507130866 , "nan");
 
-      calc = new Calculator(refractiveIndex.diamond, refractiveIndex.air, 15);
+      calc = new Calculator(calc.refractiveIndex.diamond, calc.refractiveIndex.air, 15);
       test(calc, 38.748266879489876  , 24.425839311114352);
 
-      calc = new Calculator(refractiveIndex.diamond, refractiveIndex.water, 45);
+      calc = new Calculator(calc.refractiveIndex.diamond, calc.refractiveIndex.water, 45);
       test(calc, "nan", 33.35425165725555);
     });
   });

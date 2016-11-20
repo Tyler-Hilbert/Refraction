@@ -1,11 +1,13 @@
 // IMPORTANT: make sure to include calculator.js before this class
 
 var greaterIndex = 1; // The medium with the greater index
+var calc = new Calculator(1, 1, 15); // TODO can this be referenced without instantiating an unused calculator
 
 function swap() {
 	if (greaterIndex == 1) {
 		// Perform calculations
-		var calc = new Calculator(1.000293, 2.419, 15);
+
+		calc = new Calculator(calc.refractiveIndex.air, calc.refractiveIndex.diamond, 15);
 		calc.printToConsole()
 
 		// Update ui
@@ -20,7 +22,7 @@ function swap() {
 		greaterIndex = 2;
 	} else {
 		// Perform calculations
-	 	var calc = new Calculator(2.419, 1.000293, 15);
+	 	calc = new Calculator(calc.refractiveIndex.diamond, calc.refractiveIndex.air, 15);
 		calc.printToConsole();
 
 		// Update ui

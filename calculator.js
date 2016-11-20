@@ -4,6 +4,8 @@ function Calculator(ni, nr, aoi) {
 	this.nr = nr;
 	this.aoi = aoi;
 
+	this.refractiveIndex = {"vacuum": 1, "air": 1.000293, "water": 1.33, "diamond": 2.419};
+
 	this.getAOR = function() {
 		aoiRadians = this.degreesToRadians(this.aoi);
 		aorRadians = Math.asin(this.ni * Math.sin(aoiRadians) / this.nr);
