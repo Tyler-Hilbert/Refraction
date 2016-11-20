@@ -24,4 +24,9 @@ function Calculator(ni, nr, aoi) {
 	this.degreesToRadians = function(degrees) {
 		return degrees * (Math.PI/180);
 	};
+
+	// Log the variables being run and the calculators prediction
+	this.printToConsole = function() {
+		console.log("ni:" + this.ni + " nr:" + this.nr + " aoi: " + this.aoi + " aor:" + this.getAOR() + " critical angle:" + this.getCriticalAngle());
+	}
 };

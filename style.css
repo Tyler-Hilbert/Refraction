@@ -1,17 +1,20 @@
 #parent {
-	background: #999;
 	padding: 0px;
 }
 
-#glass {
+#medium-i {
+	background: #ccc;
+}
+
+#medium-r {
 	background: #666;
 }
 
 .child {
-	background: #ccc;
 	height: 200px;
 	margin: 0px;
 	position: relative;
+	text-align: right;
 }
 
 svg {

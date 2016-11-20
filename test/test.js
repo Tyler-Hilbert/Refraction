@@ -4,14 +4,9 @@ var path = './calculator.js';
 var code = fs.readFileSync(path);
 vm.runInThisContext(code);
 
-// Log the variables being run and the calculators prediction
-function print(calc) {
-  console.log("ni:" + calc.ni + " nr:" + calc.nr + " aoi: " + calc.aoi + " aor:" + calc.getAOR() + " critical angle:" + calc.getCriticalAngle());
-}
-
 // Test if the calculator has the values or aor for getAOR() and criticalAngle for getCriticalAngle()
 function test(calc, aor, criticalAngle) {
-  print(calc);
+  calc.print(calc);
   if (aor != "nan") {
     assert(calc.getAOR() == aor);
   }
@@ -73,6 +68,9 @@ describe('Calculator', function() {
 
       calc = new Calculator(refractiveIndex.air, refractiveIndex.diamond, 15);
       test(calc, 6.143881507130866 , "nan");
+
+      calc = new Calculator(refractiveIndex.diamond, refractiveIndex.air, 15);
+      test(calc, 38.748266879489876  , 24.425839311114352);
 
       calc = new Calculator(refractiveIndex.diamond, refractiveIndex.water, 45);
       test(calc, "nan", 33.35425165725555);
