@@ -11,8 +11,9 @@ function swap() {
 		calc.printToConsole()
 
 		// Update ui
-		document.getElementById("layer1").setAttribute("d", "M 0, 0 L300,200");
-		document.getElementById("layer2").setAttribute("d", "M300, 0 L400,200");
+		drawLight(calc);
+
+
 		//document.getElementById("layer3").setAttribute("d", "M400, 0 L700,200");
 		// TODO Add these labels in .... They need to not interact with the svg position or arrow
 		//document.getElementById("medium-i-label").innerHTML = "Air";
@@ -26,8 +27,8 @@ function swap() {
 		calc.printToConsole();
 
 		// Update ui
-		document.getElementById("layer1").setAttribute("d", "M 0, 0 L100,200");
-		document.getElementById("layer2").setAttribute("d", "M100, 0 L400,200")
+		drawLight(calc);
+
 		//document.getElementById("layer3").setAttribute("d", "M400, 0 L500,200");
 		// TODO Add these labels in .... They need to not interact with the svg position or arrow
 		//document.getElementById("medium-i-label").innerHTML = "Diamond";
@@ -35,6 +36,11 @@ function swap() {
 		document.getElementById("description").innerHTML = "When medium 1(diamond) has a higher index of refraction than medium 2(air)";
 		greaterIndex = 1;
 	}
+}
 
-
+// TODO can I force this parameter to be a Calculator
+function drawLight(calc) {
+	var drawer = new Drawer(calc);
+	drawer.drawIncidenceLine();
+	drawer.drawRefractionLine();
 }
