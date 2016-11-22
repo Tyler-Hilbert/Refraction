@@ -42,5 +42,6 @@ function swap() {
 function drawLight(calc) {
 	var drawer = new Drawer(calc);
 	drawer.drawIncidenceLine();
-	drawer.drawRefractionLine();
+	drawer.drawRefractionLine(); // TODO test if this line should be drawn
+	drawer.drawReflectedLine(); // TODO test if this line should be drawn
 }

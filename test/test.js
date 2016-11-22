@@ -60,7 +60,7 @@ describe('Calculator', function() {
       test(calc, 0.9999365315129298, "nan");
     });
 
-    // TODO - can I print the enum name instead of the number for these?
+    // TODO - can I print the enum name instead of the number for these? (In js, is there a way to get the name of an enum field from the value?  ----  {Show the enum}.  Is there a way I can print the values of the enum field given the int value.  I.E. I have 1 and I want to print vacuum.
     it('refractive index test', function() {
       var calc = new Calculator(1, 1, 30); // Instantiate calc with unused variables so you can reference calc.refractiveIndex
       calc = new Calculator(calc.refractiveIndex.vacuum, calc.refractiveIndex.air, 30);
