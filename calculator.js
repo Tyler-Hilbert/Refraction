@@ -29,6 +29,15 @@ function Calculator(ni, nr, aoi) {
 
 	// Log the variables being run and the calculators prediction
 	this.printToConsole = function() {
-		console.log("ni:" + this.ni + " nr:" + this.nr + " aoi: " + this.aoi + " aor:" + this.getAOR() + " critical angle:" + this.getCriticalAngle());
+		console.log("ni:" + this.formatIndex(this.ni) + " nr:" + this.formatIndex(this.nr) + " aoi: " + this.aoi + " aor:" + this.getAOR() + " critical angle:" + this.getCriticalAngle());
+	}
+
+	this.formatIndex = function(indexOfRefraction) {
+		key = Object.keys(this.refractiveIndex).find(k => this.refractiveIndex[k] === indexOfRefraction);
+		if (key == null) {
+			return indexOfRefraction;
+		} else {
+			return key + "(" + indexOfRefraction + ")";
+		}
 	}
 };
