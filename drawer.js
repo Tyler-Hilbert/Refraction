@@ -4,7 +4,7 @@ function Drawer(calc) { // TODO can I force calc parameter to be a Calculator
   // TODO set these harcoded values
   this.sx = 100;              // Starting x position of light beam
   this.sy = 100;              // Starting y position of light beam
-  this.WIDTH = 800;           // Width of the 2 mediums
+  this.WIDTH = 400;           // Width of the 2 mediums // TODO get this programmatically instead of hardcode
   // TODO refactor this to contact x
   this.mx = .5 * this.WIDTH;  // The middle x location / the contacting x position of 2 mediums
 
