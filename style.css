@@ -8,10 +8,11 @@
 
 #medium-r {
 	background: #666;
+	z-index: -1;
 }
 
 .child {
-	height: 200px;
+	height: 400px;
 	margin: 0px;
 	position: relative;
 	text-align: right;
