@@ -38,7 +38,7 @@ function swap() {
 	}
 }
 
-// TODO can I force this parameter to be a Calculator
+// TODO can I force this parameter to be a Calculator..... Yes, use type of: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 function drawLight(calc) {
 	var drawer = new Drawer(calc);
 	drawer.drawIncidenceLine();

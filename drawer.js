@@ -44,7 +44,11 @@ function Drawer(calc) { // TODO can I force calc parameter to be a Calculator
 
   // TODO This is going to swap the x and y coordinates.  The math needs to be double checked for this and then have the coordinates swapped in the calculation not in the draw method.
   this.draw = function (id, x0, y0, x1, y1) {
-    console.log(id + y0+","+x0+",L"+y1+","+x1)
+    //console.log(id + y0+","+x0+",L"+y1+","+x1)
     document.getElementById(id).setAttribute("d", "M"+y0+","+x0+",L"+y1+","+x1);
+    //document.getElementById(id).append('<path id="incidence-line" style="stroke:red; stroke-width: 1.25px; fill: none; marker-end: url(#arrow);" />').setAttribute("d", "M"+y0+","+x0+",L"+y1+","+x1);
+
+    //console.log('<path d="M'+y0+","+x0+",L"+y1+","+x1+'" style="fill:red;" />');
+    //document.getElementById("svg").append('<path d="M'+y0+","+x0+",L"+y1+","+x1+'" style="fill:red;" />');
   }
 }
